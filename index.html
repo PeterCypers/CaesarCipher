@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caesar Cyfer</title>  
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
+</head>
+<body>
+  <main>
+    <h1>Ceasar Cyfer</h1>
+    <div>
+      <div id="toggleContainer">
+      <span id="switchLabel">Encode / Decode</span>
+
+        <label class="switch">
+          <input type="checkbox" id="encodeToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+      
+    </div>
+
+    <div id="encodeContainer">
+      <h2>Encode</h2>
+      <!-- no action needed: that's if you want to send the data somewhere (API) -->
+      <form id="encodeForm">
+        <label for="encodeRotations">Choose rotations (0–25):</label>
+            <input
+              id="encodeRotations"
+              name="rotations"
+              type="number"
+              inputmode="numeric"
+              min="0"
+              max="25"
+              step="1"
+              value="0"
+              required
+            />
+            <br>
+        <textarea name="encoding" id="encodeArea" cols="30" rows="5" required>qffqdsfqdfq</textarea>
+        <br>
+        <button type="submit">Encode!</button>
+      </form>
+      <br>
+      <!-- class hidden until form submit -->
+      <div id="encodeResult" class="hidden">
+        <p class="nomargin">Encoded:</p>
+        <p id="encodedText"></p>
+        <br>
+        <small>(click to copy to clipboard)</small>
+      </div>
+
+    </div>
+
+    <div id="decodeContainer" class="hidden">
+      <h2>Decode</h2>
+      <!-- no action needed: that's if you want to send the data somewhere (API) -->
+      <form id="decodeForm">
+        <label for="decodeRotations">Choose rotations (0–25):</label>
+            <input
+              id="decodeRotations"
+              name="rotations"
+              type="number"
+              inputmode="numeric"
+              min="0"
+              max="25"
+              step="1"
+              value="0"
+              required
+            />
+            <br>
+        <textarea name="decoding" id="decodeArea" cols="30" rows="5" required>fdqfqfdf</textarea>
+        <br>
+        <button type="submit">Decode!</button>
+      </form>
+      <br>
+      <!-- class hidden until form submit -->
+      <div id="decodeResult" class="hidden">
+        <p class="nomargin">Decoded:</p>
+        <p id="decodedText"></p>
+        <br>
+        <small>(click to copy to clipboard)</small>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/main.js" type="module"></script>
+</body>
+</html>
