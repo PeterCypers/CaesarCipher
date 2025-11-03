@@ -13,7 +13,6 @@ export function decode(text, rotation) {
       const indexUpper = REVERSE_UPPER.indexOf(letter);
       decoded += REVERSE_UPPER[(indexUpper + rotation) % 26];
 
-
       //lowercase
     }else if(ALPHA_LOWER.includes(letter)) {
       const indexLower = REVERSE_LOWER.indexOf(letter);

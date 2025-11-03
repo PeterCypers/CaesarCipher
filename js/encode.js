@@ -10,7 +10,6 @@ export function encode(text, rotation) {
       const indexUpper = ALPHA_UPPER.indexOf(letter);
       encoded += ALPHA_UPPER[(indexUpper + rotation) % 26];
 
-
       //lowercase
     }else if(ALPHA_LOWER.includes(letter)) {
       const indexLower = ALPHA_LOWER.indexOf(letter);

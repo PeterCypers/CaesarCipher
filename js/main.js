@@ -1,19 +1,10 @@
 import { encode } from "./encode.js";
 import { decode } from "./decode.js";
 
-const encodeToggle = document.getElementById("encodeToggle");
-const encodeContainer = document.getElementById("encodeContainer");
-const decodeContainer = document.getElementById("decodeContainer");
-const encodeForm = document.getElementById("encodeForm");
-const encodeTextArea = document.getElementById("encodeArea");
-const encRot = document.getElementById("encodeRotations");
-const encRes = document.getElementById("encodeResult");
-const encText = document.getElementById("encodedText");
-const decodeForm = document.getElementById("decodeForm");
-const decodeTextArea = document.getElementById("decodeArea");
-const decRot = document.getElementById("decodeRotations");
-const decRes = document.getElementById("decodeResult");
-const decText = document.getElementById("decodedText");
+import { encodeToggle, encodeContainer, decodeContainer, encodeForm,
+  encodeTextArea, encRot, encRes, encText, decodeForm, decodeTextArea,
+  decRot, decRes, decText, minusBtn, plusBtn
+} from "./constants.js";
 
 function switchViews(isDecoding) {
   // Encode
@@ -27,7 +18,6 @@ function switchViews(isDecoding) {
     decodeContainer.classList.remove("hidden");
   }
 }
-
 
 function init() {
   encodeToggle.onchange = () => {
@@ -45,6 +35,8 @@ function init() {
     // Always use .value for form elements (<input>, <textarea>, <select>).
     const encodeMessage = encodeTextArea.value;
     encRes.classList.remove("hidden");
+    minusBtn.classList.remove("hidden");
+    plusBtn.classList.remove("hidden");
     encText.innerText = encode(encodeMessage, val);
   });
 
@@ -59,6 +51,17 @@ function init() {
     decRes.classList.remove("hidden");
     decText.innerText = decode(decodeMessage, val);
   });
+
+  // no checks needed for these buttons, invalid values handled in the form-control
+  minusBtn.onclick = () => {
+    const val = Number(encRot.value || 0);
+    encRot.value = val -1;
+  };
+
+  plusBtn.onclick = () => {
+    const val = Number(encRot.value || 0);
+    encRot.value = val +1;
+  }
 
   encText.onclick = () => {
     navigator.clipboard.writeText(encText.innerText);

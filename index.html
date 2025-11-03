@@ -19,7 +19,6 @@
           <span class="slider"></span>
         </label>
       </div>
-      
     </div>
 
     <div id="encodeContainer">
@@ -41,7 +40,14 @@
             <br>
         <textarea name="encoding" id="encodeArea" cols="30" rows="5" required></textarea>
         <br>
-        <button type="submit">Encode!</button>
+        <!-- curiously the form submit button automatically clicks when any of these other btns are clicked -->
+        <!-- from GPT: By default, a <button> inside a <form> acts as type="submit" -->
+        <!-- buttons inside the form will always have their onclick events trigger before the form submit event triggers -->
+        <div id="encode_btns_container">
+          <button type="submit">Encode!</button>
+          <button id="minusone_btn" class="hidden"> -1</button>
+          <button id="plusone_btn" class="hidden"> +1</button>
+        </div>
       </form>
       <br>
       <!-- class hidden until form submit -->

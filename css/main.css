@@ -28,11 +28,6 @@ button {
   border-radius: 25px;
   color: aliceblue;
   background-color: mediumpurple;
-  /* background-color: #2172EB; */
-  /* background-color: #20B1EB; */
-  /* background-color: #21EB9F; */
-  /* background-color: #2132EB; */
-  /* background-color: #6FC8EB; */
 }
 
 button:hover {
@@ -87,6 +82,16 @@ textarea {
 
 .switch {
   margin-left: 1rem;
+}
+
+#encode_btns_container{
+  display: flex;
+  gap: 1.5rem;
+}
+
+#minusone_btn,
+#plusone_btn {
+  width: 44px;
 }
 
 /* switch from w3schools: */
